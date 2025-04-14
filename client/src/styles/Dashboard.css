@@ -1,0 +1,202 @@
+/* Global Styles */
+:root {
+  --light-gray: #f5f5f5;
+  --dark-color: #333;
+  --gray-color: #666;
+  --error-color: #e74c3c;
+  --primary-color: #4CAF50;
+  --primary-dark: #2E7D32;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.dashboard-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.dashboard-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.dashboard-header h1 {
+  color: var(--dark-color);
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.dashboard-subtitle {
+  color: var(--gray-color);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Dashboard Grid - Now single column */
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Dashboard Card Styles */
+.dashboard-card {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Meal Plan Section */
+.plan-section .day-selector {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.plan-section .day-tab {
+  min-width: 80px;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Streak Component */
+.streak-section .streak-count {
+  font-size: 1.75rem;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+}
+
+/* Loading and Error States */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.error-message p {
+  color: var(--error-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 600px) {
+  .dashboard-container {
+    padding: 1.5rem;
+  }
+  
+  .dashboard-card {
+    padding: 1.5rem;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .dashboard-container {
+    padding: 2rem;
+  }
+  
+  .dashboard-card {
+    padding: 2rem;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+  
+  .dashboard-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0.75rem;
+  }
+  
+  .dashboard-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .dashboard-grid {
+    gap: 0.75rem;
+  }
+}
+
+/* Prevent text overflow in all cards */
+.dashboard-card * {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure all content stays within cards */
+.dashboard-card {
+  overflow: hidden;
+}

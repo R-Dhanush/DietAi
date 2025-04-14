@@ -1,0 +1,105 @@
+/* src/styles/VerificationPages.css */
+.verification-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--light-color);
+}
+
+.verification-icon {
+  font-size: 4rem;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.verification-success .verification-icon {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+}
+
+.verification-error .verification-icon {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 3px solid #e74c3c;
+}
+
+.verification-page h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+.verification-page p {
+  font-size: 1.1rem;
+  color: var(--gray-color);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.verification-footer {
+  margin-top: 2rem;
+}
+
+.verification-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.verification-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.verification-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 1rem;
+}
+
+.verification-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Animation for success icon */
+@keyframes checkmark {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.verification-success .verification-icon {
+  animation: checkmark 0.6s ease-in-out;
+}
+
+/* Animation for error icon */
+@keyframes cross {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(15deg); }
+  80% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.verification-error .verification-icon {
+  animation: cross 0.6s ease-in-out;
+}
